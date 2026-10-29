@@ -2497,7 +2497,9 @@ function _ZP2(_WJ){
     _8e2=[];
     _Ke2=0;
     var _iy=_WJ.search;
-    var _yW=_WJ.protocol+"//"+_WJ.host+_WJ.pathname;_7e2[0]=_yW;
+    var link =_WJ.protocol+"//"+_WJ.host+_WJ.pathname;
+    //var link = https://distantplate.github.io/idle-breakout/
+    _7e2[0]= link;
     _8e2[0]=null;
     if(_iy[0]=="?")_iy=_iy.substring(1,_iy.length);
     var index=start=0;
@@ -2526,17 +2528,98 @@ function _ZP2(_WJ){
     if(__P2!=""){
         if(start!=index)_Jl=_iy.substring(start,index);
         _7e2[_7e2.length]=__P2;
-        _8e2[_8e2.length]=_Jl;_6e2[__P2]=_Jl;
+        _8e2[_8e2.length]=_Jl;
+        _6e2[__P2]=_Jl;
         _Ke2++;
         __P2=_Jl=""
     }
 }
 
-function _Zu2(){_xP2=canvas.style.position;_yP2=canvas.style.left;_zP2=canvas.style.top;_AP2=canvas.style;_BP2=canvas.parentNode;_CP2=canvas.nextSibling;_DP2=false;_EP2=canvas.margin;if((_BP2==document.body)||(canvas.mozRequestFullScreen)||(canvas.webkitRequestFullScreen)){_DP2=true}}function GameMaker_Init(){
-debug('------- GameMaker_Init -------------');if(!document.getElementById||!document.createElement)return;canvas=document.getElementById(_qA);_Xh=null;if(!canvas)return;/*_ZP2(window.location);*/_aA=_41;_gf2();if((_aA.__6!=undefined)&&(_aA.__6._17!=undefined)&&(_aA.__6._17>1)){_Ae=true;if(_aA.__6._47!=undefined){_Be._NE(_aA.__6._47)}}_u12();_ke2=false;_Px=[];_Px[_WI]=new __v();_Px[_SI]=new __v();_Px[_kx]=new __v();if((_aA.__6._j7)&&(_aA.__6._j7!=0)){_ne2=_aA.__6._97;var _0Q2=undefined;if(_bK!=_282){_0Q2=_fN2(canvas)}
-if(_0Q2){_Xh=_Jg}else {if(_aA.__6._j7==1){_ke2=true}_Xh=canvas.getContext('2d')}}else {_Xh=canvas.getContext('2d')}g_CurrentGraphics=_Xh;_Ae2=canvas.width;_Be2=canvas.height;if((_aA.__6._l7==true)||_Ae){_Dn=_En}if(_Dn==_En){try{g_WebAudioContext=new AudioContext()}catch(e){try{g_WebAudioContext=new webkitAudioContext()}catch(e){debug('Web Audio API not supported in this browser');_Dn=_TW}}_YV()}document.body.style._1Q2="hidden";_j_=_Xh;_mG=canvas.width;_oG=canvas.height;_y31=_mG;_A31=_oG;_D31=_y31;_E31=_A31;
-_B31=(_aA.__6.scale!=0);_ln=new _ZA();_kn(canvas,_ln);_v01=_ln.top;_s01=_ln.left;_r01=_ln.right;_u01=_ln.bottom;if(_aA.__6._2Q2){_rB(_aA.__6._2Q2)}else if(_aA.__6&&_aA.__6._07&&_aA.__6._mB){_aA.__6._mB()}_Zu2();_EY(_Xh);document.body.oncontextmenu=function(){return false};_Rn();_Jf2=document.getElementById('GM4HTML5_loadingscreen');if((_aA.__6&&_aA.__6._07)||(_aA.__6&&_aA.__6._07==undefined)){_5A=true}if(_Jg&&_5A){debug("WebGL Enabled!");debug("Max Texture Size="+_Jg._VA1())}_Pf2();_M21();if(_ke2){
-_GP2=-2}else {if(_5A)_K7._ko2=_aA.__6._07;_wg2="";_3Q2="";_4Q2=function(){};{_vg2(_aA);_GP2=0}}requestAnimFrame(_5Q2)}function _5Q2(){requestAnimFrame(_5Q2);switch(_GP2){case -2:{if(_HP2)_YP2();_6Q2(_Xh,_y31,_A31);break }case -1:if(_Hf2==_If2){_vg2(_aA);_GP2=0;if(!_HP2){_XP2();_HP2=true}_Bg2();_wg2(_FP2,_y31,_A31,_Gf2,_LX,_Jf2)}break;case 0:if(!_HP2){_XP2();_HP2=true}if(_LX>=_Gf2){_LX=_Gf2;_GP2=1}_Bg2();if(_aA.__6._7Q2){if(_Hf2==_If2){_3Q2=eval(_aA.__6._7Q2);_3Q2(_FP2,_y31,_A31,_Gf2,_LX,_Jf2)}}else _wg2(_FP2,
+function _Zu2(){_xP2=canvas.style.position;_yP2=canvas.style.left;_zP2=canvas.style.top;_AP2=canvas.style;_BP2=canvas.parentNode;_CP2=canvas.nextSibling;_DP2=false;_EP2=canvas.margin;if((_BP2==document.body)||(canvas.mozRequestFullScreen)||(canvas.webkitRequestFullScreen)){_DP2=true}}
+
+function GameMaker_Init(){
+    debug('------- GameMaker_Init -------------');
+    if(!document.getElementById||!document.createElement)return;
+    canvas=document.getElementById(_qA);
+    _Xh=null;
+    if(!canvas)return;
+    /*_ZP2(window.location);*/
+    _aA=_41;
+    _gf2();
+    if((_aA.__6!=undefined)&&(_aA.__6._17!=undefined)&&(_aA.__6._17>1)){
+        _Ae=true;
+        if(_aA.__6._47!=undefined){
+            _Be._NE(_aA.__6._47)
+        }
+    }
+    _u12();
+    _ke2=false;
+    _Px=[];
+    _Px[_WI]=new __v();
+    _Px[_SI]=new __v();
+    _Px[_kx]=new __v();
+    if((_aA.__6._j7)&&(_aA.__6._j7!=0)){
+        _ne2=_aA.__6._97;var _0Q2=undefined;
+        if(_bK!=_282){_0Q2=_fN2(canvas)}
+        if(_0Q2){_Xh=_Jg}
+        else {
+            if(_aA.__6._j7==1){_ke2=true}
+            _Xh=canvas.getContext('2d')
+        }
+    }else {_Xh=canvas.getContext('2d')}
+    g_CurrentGraphics=_Xh;
+    _Ae2=canvas.width;
+    _Be2=canvas.height;
+    if((_aA.__6._l7==true)||_Ae){_Dn=_En}
+    if(_Dn==_En){
+        try{g_WebAudioContext=new AudioContext()}
+        catch(e){
+            try{g_WebAudioContext=new webkitAudioContext()}
+            catch(e){
+                debug('Web Audio API not supported in this browser');
+            _Dn=_TW}
+        }_YV()
+    }
+    document.body.style._1Q2="hidden";
+    _j_=_Xh;
+    _mG=canvas.width;
+    _oG=canvas.height;
+    _y31=_mG;
+    _A31=_oG;
+    _D31=_y31;
+    _E31=_A31;
+    _B31=(_aA.__6.scale!=0);
+    _ln=new _ZA();
+    _kn(canvas,_ln);
+    _v01=_ln.top;
+    _s01=_ln.left;
+    _r01=_ln.right;
+    _u01=_ln.bottom;
+    if(_aA.__6._2Q2){_rB(_aA.__6._2Q2)}
+    else if(_aA.__6&&_aA.__6._07&&_aA.__6._mB){_aA.__6._mB()}
+    _Zu2();
+    _EY(_Xh);
+    document.body.oncontextmenu=function(){return false};
+    _Rn();
+    _Jf2=document.getElementById('GM4HTML5_loadingscreen');
+    if((_aA.__6&&_aA.__6._07)||(_aA.__6&&_aA.__6._07==undefined)){_5A=true}
+    if(_Jg&&_5A){
+        debug("WebGL Enabled!");
+        debug("Max Texture Size="+_Jg._VA1())
+    }
+    _Pf2();
+    _M21();
+    if(_ke2){_GP2=-2}
+    else {
+        if(_5A)_K7._ko2=_aA.__6._07;_wg2="";
+        _3Q2="";
+        _4Q2=function(){};
+        {_vg2(_aA);_GP2=0}
+    }
+    requestAnimFrame(_5Q2)
+}
+
+function _5Q2(){requestAnimFrame(_5Q2);switch(_GP2){case -2:{if(_HP2)_YP2();_6Q2(_Xh,_y31,_A31);break }case -1:if(_Hf2==_If2){_vg2(_aA);_GP2=0;if(!_HP2){_XP2();_HP2=true}_Bg2();_wg2(_FP2,_y31,_A31,_Gf2,_LX,_Jf2)}break;case 0:if(!_HP2){_XP2();_HP2=true}if(_LX>=_Gf2){_LX=_Gf2;_GP2=1}_Bg2();if(_aA.__6._7Q2){if(_Hf2==_If2){_3Q2=eval(_aA.__6._7Q2);_3Q2(_FP2,_y31,_A31,_Gf2,_LX,_Jf2)}}else _wg2(_FP2,
 _y31,_A31,_Gf2,_LX,_Jf2);break;case 1:_YP2();_Mg2(_aA);_GP2=2;break;case 2:_4Q2();_8Q2();_GP2=3;_K7._in2=new Date().getTime();break;case 3:_9Q2();break }}function _aQ2(_Kp2,x,y,_t6,text){_Kp2.fillStyle=_t6;_Kp2.lineStyle=_t6;_Kp2.font="14px Verdana";;_Kp2.textAlign="center";_Kp2.fillText(text,x,y);_Kp2.textAlign="left"}function _6Q2(_Kp2,_Rg,_Sg){_Kp2.fillStyle=_0q(0x151515,1.0);_Kp2.fillRect(0,0,_Rg,_Sg);_aQ2(_Kp2,_Rg/2,(_Sg/2),_0q(0x8d8f90,1.0),"WebGL is required to run this application.")}function _xg2(_Xh,
 _Rg,_Sg,_bQ2,_cQ2,_dQ2){_Xh.globalAlpha=1;if(_dQ2){}else {var _eQ2=(_Rg/100)*50;var _fQ2=2;var x=(_Rg-_eQ2)/2;var y=10+(_Sg-_fQ2)/2;_Xh.fillStyle=_0q(0x151515,1.0);_Xh.fillRect(0,0,_Rg,_Sg);if(_cQ2!=0){var _22=(_eQ2/_bQ2)*_cQ2;_Xh.fillStyle=_0q(0x404040,1.0);_Xh.fillRect(x,y,_eQ2,_fQ2);_Xh.fillStyle=_0q(0x8d8f90,1.0);_Xh.fillRect(x,y,_22,_fQ2)}_aQ2(_Xh,_Rg/2,(_Sg/2),_0q(0x8d8f90,1.0),"Loading")}}function _gQ2(_XI2){_Cp._5n();var _hQ2=_XI2._UU._m6;for(var _02=0;_02<_hQ2.length;_02++){_Cp._7o(_hQ2[_02]);var _Fp=_Cp._9o(_02);
 var _iQ2=_Cp._Dp(_02);_K7._on2[_02]=_Fp._82;_K7._pn2[_02]=_Fp._LM;_K7._qn2[_02]=_Fp.index;_K7._rn2[_02]=_Fp.x;_K7._sn2[_02]=_Fp.y;if((_iQ2!==null)&&(_iQ2!==undefined)&&(_iQ2._Gp!==null)&&(_iQ2._Gp!==undefined)){_K7._tn2[_02]=_iQ2._Gp._22;_K7._un2[_02]=_iQ2._Gp._32}else {_K7._tn2[_02]=0;_K7._un2[_02]=0}_K7._vn2[_02]=_Fp._7k2;_K7._wn2[_02]=_Fp._8k2;_K7._xn2[_02]=_Fp._OM;_K7._yn2[_02]=_Fp._PM;_K7._An2[_02]=_Fp._ak2;_K7._zn2[_02]=_Fp._9k2;_K7._Bn2[_02]=_Fp._RM;_K7._Cn2[_02]=_Fp.alpha}_K7._mn2=_XI2._aG2}
