@@ -1,9 +1,5 @@
 Array.prototype._31 = 0;
 var _41 = {
-	_51: [{
-		_61: ["tph_kongAPIextension.js"],
-		_71: []
-	}],
 	_81: [{
 		_91: "sound_0",
 		_a1: 0,
@@ -15566,7 +15562,7 @@ var _41 = {
 		_j7: 0,
 		_k7: 0,
 		_l7: !0,
-		_m7: "html5game",
+		_m7: "assets",
 		_n7: "Default",
 		_o7: 0,
 		_p7: !0,
@@ -16034,8 +16030,7 @@ function _I1(_A7, _B7) {
 function _J1(_A7, _B7) {
 	_T8("save.dat");
 	_U8("main", "level", _E7(0)._V8);
-	_U8("main", "mob_number",
-		_E7(0)._W8);
+	_U8("main", "mob_number", _E7(0)._W8);
 	_U8("main", "mob_level", _E7(0)._X8);
 	_U8("main", "money", _E7(0)._F8);
 	_U8("main", "gold", _E7(0)._Y8);
@@ -16304,8 +16299,7 @@ function _L1(_A7, _B7, _C7) {
 	_l9 = 0;
 	_E7(0)._V8 = _z9(_r9, _l9);
 	_l9 += 1;
-	_E7(0)._F8 = _z9(_r9,
-		_l9);
+	_E7(0)._F8 = _z9(_r9, _l9);
 	_l9 += 1;
 	_E7(0)._Y8 = _z9(_r9, _l9);
 	_l9 += 1;
@@ -16730,18 +16724,12 @@ function _c2(_A7, _B7) {
 		_I1(_A7, _B7);
 		_6a();
 		_A7._7a = 0;
-		if ((_8a(myDomain, _9a()) < 1)) {
-			{
-				_aa(3);
-			}
-		};
 		_A7._ba = _ca(32, 24);
 		_A7._da = 0;
 		_T8("save.dat");
 		_A7._V8 = _ea("main", "level", 1);
 		_A7._W8 = _ea("main", "mob_number", 0);
-		_A7._X8 = _ea("main",
-			"mob_level", 1);
+		_A7._X8 = _ea("main", "mob_level", 1);
 		_A7._F8 = _ea("main", "money", 24);
 		_A7._Y8 = _ea("main", "gold", 0);
 		_A7._Z8 = _ea("main", "goldtemp", 0);
@@ -16804,7 +16792,7 @@ function _c2(_A7, _B7) {
 		_A7._ga = 1;
 		_A7._ha = 0;
 		_A7._ia = 50;
-		_A7._H9 = 40;
+		_A7._H9 = 1000;
 		_A7._ja = (5 * _K7._J8());
 		_A7._ka = 1;
 		_A7._la = 0;
@@ -17295,8 +17283,7 @@ function _c2(_A7, _B7) {
 		_A9(_A7._v8, 1, 9, (-1));
 		_A9(_A7._v8, 1, 10, (-1));
 		_A9(_A7._v8, 2, 0, "Blocko");
-		_A9(_A7._v8, 2, 1, (20 * _f8(10,
-			6)));
+		_A9(_A7._v8, 2, 1, (20 * _f8(10, 6)));
 		_A9(_A7._v8, 2, 2, 1);
 		_A9(_A7._v8, 2, 3, 0);
 		_A9(_A7._v8, 2, 4, 0);
@@ -32272,7 +32259,7 @@ function _tW(_iW) {
 
 function _xW(_aW) {
 	var _wW = _aA._81[_aW];
-	var _yW = _7h + _wW._c1;
+	var _yW = _7h + adir + _wW._c1;
 	var _zW = _wW._b1;
 	_yW = _AW(_yW);
 	var index = _yW.indexOf(_zW);
@@ -33011,7 +32998,7 @@ _5Y.prototype._Zg = function() {
 	for (_02 = 0; _02 < this._9Y.length; ++_02) {
 		var index = this._9Y[_02];
 		if (_aA._81[index]._a1 == 0) {
-			var id = _TX(_7h + _aA._81[index]._c1, index, _aA._81[index]._b1, this);
+			var id = _TX(_7h + adir + _aA._81[index]._c1, index, _aA._81[index]._b1, this);
 			if (id === undefined) this._hY()
 		} else {
 			this._hY()
@@ -61180,7 +61167,8 @@ function _ff2() {
 	_ud2[13] = 0;
 	_ud2[14] = 0xffffffff;
 	_qA = "canvas";
-	_7h = "html5game/";
+	_7h = "assets/";
+	adir = "audio/";
 	if (typeof(g_GameMakerHTML5Dir) != "undefined") {
 		_7h = g_GameMakerHTML5Dir
 	} else {
@@ -61812,35 +61800,12 @@ function _hg2(_ig2) {
 	return _jg2
 }
 
-function _kg2(_LJ) {
-	debug("Loading: " + _7h + _LJ);
-	var e = window.document.createElement('script');
-	e.setAttribute('src', _7h + _LJ);
-	e.setAttribute('type', "text/javascript");
-	e.onload = _8g2;
-	e.onerror = _9g2;
-	window.document.body.appendChild(e);
-	_Hf2++
-}
-
-function _lg2(_mg2) {
-	if (_mg2._51 !== undefined) {
-		for (var _02 = 0; _02 < _mg2._51.length; _02++) {
-			var _ng2 = _mg2._51[_02];
-			if (_ng2._61) {
-				for (var _oB = 0; _oB < _ng2._61.length; _oB++) {
-					_kg2(_ng2._61[_oB])
-				}
-			}
-		}
-	}
-}
-
 function _og2(_mg2) {
 	_Kf2 = [];
 	_Hf2 = 0;
 	_If2 = 0;
-	_lg2(_mg2)
+	_8g2;
+	_Hf2++
 }
 
 function _pg2(_ig2) {
@@ -61920,14 +61885,14 @@ function _vg2(_mg2) {
 				}
 				if (_f1 == 0) {
 					_Gf2++;
-					debug("Loading: " + _7h + _mg2._81[index]._c1);
+					debug("Loading: " + _7h + adir + _mg2._81[index]._c1);
 					if (_mg2._81[index]._a1 === 0) {
-						id = _TX(_7h + _mg2._81[index]._c1, index, _mg2._81[index]._b1);
+						id = _TX(_7h + adir + _mg2._81[index]._c1, index, _mg2._81[index]._b1);
 						if (id === undefined) {
 							_Gf2--
 						}
 					} else if ((_mg2._81[index]._a1 == 3) || (_mg2._81[index]._a1 == 1)) {
-						_OX(_7h + _mg2._81[index]._c1, index, _mg2._81[index]._b1);
+						_OX(_7h + adir + _mg2._81[index]._c1, index, _mg2._81[index]._b1);
 						_Gf2--
 					} else {
 						debug("Attempting to load sound with unknown type: " + _mg2._81[index]._a1);
@@ -61940,8 +61905,8 @@ function _vg2(_mg2) {
 		for (index = 0; index < _mg2._81.length; index++) {
 			if (_mg2._81[index] !== null) {
 				_Gf2++;
-				debug("Loading: " + _7h + _mg2._81[index]._c1);
-				id = _Ag2(_7h + _mg2._81[index]._c1, _mg2._81[index]._91,
+				debug("Loading: " + _7h + adir + _mg2._81[index]._c1);
+				id = _Ag2(_7h + adir + _mg2._81[index]._c1, _mg2._81[index]._91,
 					_mg2._81[index]._b1, _bg2, _cg2);
 				if ((id !== undefined) && (_ZX[id]) && (_ZX[id].URL)) {
 					_Kf2[_ZX[id].URL] = _ZX[id];
@@ -63342,17 +63307,10 @@ _2x.prototype._mh = function(x, y, _3j, _5h) {
 
 function _ZT(_Ij2) {
 	var _mo = _ZT.arguments;
-	var _no = _ZT.arguments.length;
 	this._ro = [];
 	this._0p = [];
 	this.length = 0;
 	this._Vg = 0;
-	if (_no > 0) {
-		for (var _02 = 0; _02 < _no; _02++) {
-			this._ro[_02] = null;
-			this._0p.push(_02)
-		}
-	}
 }
 _ZT.prototype._mf2 = function() {
 	var _Hf;
@@ -67585,9 +67543,8 @@ _Tf2.prototype._mf = function(_pD, _sX) {
 	}
 	return _hg1
 };
-var _E7 = _9u2;
 
-function _9u2(_8o) {
+function _E7(_8o) {
 	var _1J = _2J._9o(_8o);
 	if (!_1J) {
 		_1J = _je._9o(_8o);
@@ -78802,9 +78759,6 @@ function GameMaker_Init() {
 	}
 	_Zu2();
 	_EY(_Xh);
-	document.body.oncontextmenu = function() {
-		return false
-	};
 	_Rn();
 	_Jf2 = document.getElementById('GM4HTML5_loadingscreen');
 	if ((_aA.__6 && _aA.__6._07) || (_aA.__6 && _aA.__6._07 == undefined)) {
